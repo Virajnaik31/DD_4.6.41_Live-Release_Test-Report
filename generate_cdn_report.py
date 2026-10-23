@@ -287,15 +287,15 @@ with open(index_html_path, 'w', encoding='utf-8') as f:
     f.write(html_template)
 print(f"Generated index.html: {index_html_path} ({os.path.getsize(index_html_path)/1024/1024:.2f} MB)")
 
-# Write to DD_v4.6.41_Live-Release_Report.html
-named_html_path = os.path.join(base_dir, 'DD_v4.6.41_Live-Release_Report.html')
+# Write to DD_4.6.41_Live-Release_Test-Report.html
+named_html_path = os.path.join(base_dir, 'DD_4.6.41_Live-Release_Test-Report.html')
 with open(named_html_path, 'w', encoding='utf-8') as f:
     f.write(html_template)
 print(f"Generated {named_html_path} ({os.path.getsize(named_html_path)/1024/1024:.2f} MB)")
 
-# Also copy directly to C:\Users\viraj\Desktop\reports\DD_v4.6.41_Live-Release_Report.html
+# Also copy directly to C:\Users\viraj\Desktop\reports\DD_4.6.41_Live-Release_Test-Report.html
 desktop_reports_dir = r"C:\Users\viraj\Desktop\reports"
 os.makedirs(desktop_reports_dir, exist_ok=True)
-dest_path = os.path.join(desktop_reports_dir, 'DD_v4.6.41_Live-Release_Report.html')
+dest_path = os.path.join(desktop_reports_dir, 'DD_4.6.41_Live-Release_Test-Report.html')
 shutil.copyfile(named_html_path, dest_path)
 print(f"Copied to Desktop reports: {dest_path} ({os.path.getsize(dest_path)/1024/1024:.2f} MB)")
